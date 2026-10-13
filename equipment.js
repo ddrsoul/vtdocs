@@ -30,6 +30,10 @@ const EQUIPMENT = [
     { title: "Документация VT40 / VT48 / VT32X v1.15", path: "docs/vt-winches/vt40-vt48-vt32x.pdf" },
   ] },
   { name: "Фильтры ФП-ВТ", desc: "ЭМС-фильтры", files: [
-    { title: "Документация", path: "docs/fp-vt/docs.pdf" },
+    { title: "ЭМС-фильтры: каталог", path: "docs/fp-vt/emc-filter-catalog.pdf" },
+    { title: "ФП-ВТ-3030: размеры", path: "docs/fp-vt/fp-vt-3030-dimensions.pdf" },
+    { title: "ФП-ВТ-3045: размеры", path: "docs/fp-vt/fp-vt-3045-dimensions.pdf" },
+    { title: "ФП-ВТ-3060: размеры", path: "docs/fp-vt/fp-vt-3060-dimensions.pdf" },
+    { title: "ФП-ВТ-3080: размеры", path: "docs/fp-vt/fp-vt-3080-dimensions.pdf" },
   ] },
 ];
