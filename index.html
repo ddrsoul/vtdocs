@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Оборудование и документация</title>
+<style>
+  body{font:16px/1.5 system-ui,sans-serif;max-width:860px;margin:0 auto;padding:16px;color:#1b1b1b;background:#fafafa}
+  h1{margin-bottom:8px}
+  input{width:100%;padding:10px;font-size:16px;border:1px solid #bbb;border-radius:8px;box-sizing:border-box;margin:8px 0 16px}
+  .card{background:#fff;border:1px solid #ddd;border-radius:10px;padding:14px 16px;margin-bottom:12px}
+  .card h2{margin:0 0 2px;font-size:1.2rem}
+  .desc{color:#555;margin:0 0 8px}
+  ul{margin:0;padding-left:20px}
+  .empty{color:#999;font-style:italic}
+  @media (prefers-color-scheme:dark){body{background:#161616;color:#eee}.card{background:#212121;border-color:#333}.desc{color:#aaa}input{background:#212121;color:#eee;border-color:#444}a{color:#6cb4ff}}
+</style>
+</head>
+<body>
+<h1>Оборудование и документация</h1>
+<input id="q" type="search" placeholder="Поиск по оборудованию…">
+<div id="list"></div>
+<script src="equipment.js"></script>
+<script>
+const list = document.getElementById('list'), q = document.getElementById('q');
+function render() {
+  const s = q.value.trim().toLowerCase();
+  list.innerHTML = '';
+  EQUIPMENT.filter(e => (e.name + ' ' + e.desc).toLowerCase().includes(s)).forEach(e => {
+    const c = document.createElement('div'); c.className = 'card';
+    const h = document.createElement('h2'); h.textContent = e.name;
+    const d = document.createElement('p'); d.className = 'desc'; d.textContent = e.desc;
+    c.append(h, d);
+    if (e.files.length) {
+      const ul = document.createElement('ul');
+      e.files.forEach(f => {
+        const li = document.createElement('li'), a = document.createElement('a');
+        a.href = f.path; a.textContent = f.title; a.target = '_blank';
+        li.append(a); ul.append(li);
+      });
+      c.append(ul);
+    } else {
+      const p = document.createElement('p'); p.className = 'empty'; p.textContent = 'Документация скоро появится'; c.append(p);
+    }
+    list.append(c);
+  });
+}
+q.addEventListener('input', render); render();
+</script>
+</body>
+</html>
