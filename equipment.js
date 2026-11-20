@@ -24,7 +24,7 @@ const EQUIPMENT = [
     { title: "Быстрый запуск v9.0 (24V)", path: "docs/ukz-vt/quick-start-24v.pdf" },
   ] },
   { name: "ФБ-ВТ", desc: "Фотобарьер для лифтов", files: [
-    { title: "Руководство по эксплуатации v2.5", path: "docs/fb-vt/manual-v2.5.pdf" },
+    { title: "Руководство по эксплуатации v2.6", path: "docs/fb-vt/manual-v2.6.pdf" },
   ] },
   { name: "Лебедки VT", desc: "Безредукторные лебёдки", files: [
     { title: "Документация VT40 / VT48 / VT32X v1.15", path: "docs/vt-winches/vt40-vt48-vt32x.pdf" },
